@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#140824">
+  <title>Barely Made It Home · Saint &amp; The Overdrawn | BenderTree</title>
+  <meta property="og:type" content="music.song">
+  <meta property="og:title" content="Barely Made It Home · Saint &amp; The Overdrawn | BenderTree">
+  <meta property="og:description" content="Two brothers embark on a chaotic night of luxury steaks, high-stakes gambling, and clubbing that leaves them broke and barely able to find their way home.">
+  <meta property="og:image" content="https://bbciii66.github.io/bendertree-music/assets/hero_barely_made_it_home_cover.jpg">
+  <meta property="og:url" content="https://bbciii66.github.io/bendertree-music/barely-made-it-home/?theme=lsu">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Barely Made It Home · Saint &amp; The Overdrawn | BenderTree">
+  <meta name="twitter:description" content="Two brothers embark on a chaotic night of luxury steaks, high-stakes gambling, and clubbing that leaves them broke and barely able to find their way home.">
+  <meta name="twitter:image" content="https://bbciii66.github.io/bendertree-music/assets/hero_barely_made_it_home_cover.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-theme="lsu">
+  <div class="top-stripe"></div>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">B</span>
+        <span>BenderTree</span>
+      </div>
+      <div class="theme-bar" role="group" aria-label="Pick your theme">
+        <span class="theme-label">Pick your theme:</span>
+        <button type="button" class="pill-btn" data-set-theme="studio" aria-pressed="false"><span class="swatch" style="background:#38bdf8"></span>Studio Cyan</button>
+        <button type="button" class="pill-btn" data-set-theme="americana" aria-pressed="false"><span class="swatch" style="background:#f59e0b"></span>Americana Gold</button>
+        <button type="button" class="pill-btn active" data-set-theme="lsu" aria-pressed="true"><span class="swatch" style="background:#fdd023"></span>LSU Gameday</button>
+        <span class="copy-wrap">
+          <button type="button" class="pill-btn" id="visitorShareBtn">Share ↗</button>
+          <span class="copy-tip" role="status"></span>
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO: LATEST DROP -->
+      <section class="hero">
+        <div>
+          <div class="eyebrow"><i></i> Latest Drop · Featured Premiere</div>
+          <div class="hero-artist">Saint &amp; The Overdrawn</div>
+          <h1>Barely Made It Home</h1>
+          <p class="hero-sub">Two brothers embark on a chaotic night of luxury steaks, high-stakes gambling, and clubbing that leaves them broke and barely able to find their way home.</p>
+
+          <div class="cta-stack">
+            <div class="cta-row">
+              <button type="button" class="btn primary" id="heroWatchInlineBtn">▶ Watch Video</button>
+              
+            </div>
+            <div class="cta-row">
+              <button type="button" class="btn" id="heroPlayHookBtn">♫ Play Cut Audio</button>
+              <button type="button" class="btn" id="heroPlayFullBtn">Full Song (Full Track)</button>
+              <a class="btn" id="heroDlMp3" href="../assets/hero_barely_made_it_home_full.mp3" download="Barely_Made_It_Home_Full.mp3">Download MP3 ↓</a>
+              
+              
+            </div>
+          </div>
+
+          <div class="meta-strip">
+            <span><strong>94 BPM</strong> 80s-Throwback Hip-Hop / Trap Comedy</span><span>•</span>
+            <span>Barely Made It Home · 16:9 · 60s</span>
+          </div>
+        </div>
+
+        <div class="hero-player">
+          <div class="hero-stage" id="heroStage">
+            <button type="button" class="hero-poster-btn" id="heroPosterBtn" aria-label="Play Barely Made It Home inline"><img src="../assets/hero_barely_made_it_home_cover.jpg" alt="Barely Made It Home"><span class="hero-poster-scrim">▶ Play Studio Cut</span></button>
+          </div>
+          <div class="hero-player-bar">
+            <span><strong>Barely Made It Home</strong> · 16:9 · 60s</span>
+            <span style="color:var(--muted)">Streams cleanly on phone &amp; desktop</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTEN TO MORE DROPDOWN -->
+      <details class="more-drawer" id="listenMoreDrawer">
+        <summary class="more-summary">
+          <span class="more-title-text">Listen to More</span>
+          <span class="more-count-pill">3 Videos · 8 Songs · 30s Clips &amp; MP3s</span>
+        </summary>
+        <div class="more-body">
+          <div class="sec-head" id="videosSectionHead">
+            <div>
+              <h2>Music Videos</h2>
+              <p>Watch on YouTube, grab the 9:16 phone cut, or listen &amp; download the MP3</p>
+            </div>
+          </div>
+          <section class="video-grid" id="videoGrid"></section>
+
+          <div class="sec-head spaced" id="tracksSectionHead">
+            <div>
+              <h2>All Songs · 30s Clips, Full Tracks &amp; Downloads</h2>
+              <p>Preview a 30s hook clip, stream the full track, download the MP3, or jump to YouTube</p>
+            </div>
+          </div>
+          <section class="track-list" id="trackList"></section>
+        </div>
+      </details>
+    </main>
+  </div>
+
+  <!-- PERSISTENT AUDIO DOCK -->
+  <div class="dock" id="audioDock">
+    <div class="dock-inner">
+      <div class="dock-meta">
+        <strong id="dockTitle">Playing…</strong>
+        <span id="dockMode">Full Track</span>
+      </div>
+      <audio id="dockAudio" controls></audio>
+      <a class="btn sm" id="dockDl" href="#" download>Download MP3 ↓</a>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <dialog id="vidModal" class="vid-dialog" closedby="any" aria-labelledby="vidModalTitle">
+    <div class="modal-head">
+      <strong id="vidModalTitle">Video</strong>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn sm primary" id="vidModalYt" href="#" target="_blank" rel="noopener" style="display:none">Open on YouTube ↗</a>
+        <a class="btn sm" id="vidModalDlMp3" href="#" download style="display:none">Download MP3 ↓</a>
+        <a class="btn sm" id="vidModalDlMp4" href="#" download style="display:none">Download MP4 ↓</a>
+        <button type="button" class="btn sm" id="vidModalClose" autofocus>Close</button>
+      </div>
+    </div>
+    <div class="modal-stage" id="vidModalStage"></div>
+  </dialog>
+
+  <script>window.__SHARE_DATA__ = {"slug": "barely-made-it-home", "brand_name": "BenderTree", "default_theme": "lsu", "allow_mp4_download": false, "hero": {"eyebrow": "Latest Drop · Featured Premiere", "title": "Barely Made It Home", "cut_label": "Barely Made It Home · 16:9 · 60s", "artist": "Saint & The Overdrawn", "subtitle": "Two brothers embark on a chaotic night of luxury steaks, high-stakes gambling, and clubbing that leaves them broke and barely able to find their way home.", "bpm": "94", "genre": "80s-Throwback Hip-Hop / Trap Comedy", "duration_sec": 60, "aspect_ratio": "16:9", "full_duration_label": "Full Track", "youtube_id": "", "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_short_embed_url": "", "youtube_lyric_url": "", "poster_asset": "assets/hero_barely_made_it_home_cover.jpg", "hook_audio_asset": "assets/hero_barely_made_it_home_hook.mp3", "full_audio_asset": "assets/hero_barely_made_it_home_full.mp3", "mp4_asset": "assets/hero_barely_made_it_home_video.mp4", "hook_dl_name": "Barely_Made_It_Home_Cut.mp3", "full_dl_name": "Barely_Made_It_Home_Full.mp3", "mp4_dl_name": "Barely_Made_It_Home_Video.mp4", "poster_url": "../assets/hero_barely_made_it_home_cover.jpg", "hook_audio_url": "../assets/hero_barely_made_it_home_hook.mp3", "full_audio_url": "../assets/hero_barely_made_it_home_full.mp3", "mp4_url": "../assets/hero_barely_made_it_home_video.mp4"}, "videos": [{"id": "moonbeam_v7", "title": "Moonbeam (v7)", "artist": "Julian Lux", "desc": "69s Highway 1 electric cruise to laser-lit arena rock.", "dur": "69s", "poster_asset": "assets/vid_moonbeam_v7_poster.jpg", "audio_asset": "assets/vid_moonbeam_v7.mp3", "mp4_asset": "assets/vid_moonbeam_v7.mp4", "youtube_id": "", "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_short_embed_url": "", "dl_name": "Moonbeam_Full.mp3", "mp4_dl_name": "Moonbeam_Video.mp4", "poster_url": "../assets/vid_moonbeam_v7_poster.jpg", "audio_url": "../assets/vid_moonbeam_v7.mp3", "mp4_url": "../assets/vid_moonbeam_v7.mp4"}, {"id": "made_of_what_broke_me", "title": "Made of What Broke Me", "artist": "Mason Creed & The Riverline", "desc": "Heartland grit anthem · night-shift resilience & warehouse stage.", "dur": "Video", "poster_asset": "assets/vid_made_of_what_broke_me_poster.jpg", "audio_asset": "assets/vid_made_of_what_broke_me.mp3", "mp4_asset": "assets/vid_made_of_what_broke_me.mp4", "youtube_id": "", "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_short_embed_url": "", "dl_name": "Made_of_What_Broke_Me.mp3", "mp4_dl_name": "Made_of_What_Broke_Me.mp4", "poster_url": "../assets/vid_made_of_what_broke_me_poster.jpg", "audio_url": "../assets/vid_made_of_what_broke_me.mp3", "mp4_url": "../assets/vid_made_of_what_broke_me.mp4"}, {"id": "death_valley_saturday", "title": "Death Valley Saturday Night", "artist": "Cole Landry", "desc": "20s stadium tailgate teaser · Tiger Stadium Saturday roar.", "dur": "20s", "poster_asset": "assets/vid_death_valley_saturday_poster.jpg", "audio_asset": "assets/vid_death_valley_saturday.mp3", "mp4_asset": "assets/vid_death_valley_saturday.mp4", "youtube_id": "", "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_short_embed_url": "", "dl_name": "15_Should_Be_8.mp3", "mp4_dl_name": "Death_Valley_Saturday_Night.mp4", "poster_url": "../assets/vid_death_valley_saturday_poster.jpg", "audio_url": "../assets/vid_death_valley_saturday.mp3", "mp4_url": "../assets/vid_death_valley_saturday.mp4"}], "tracks": [{"id": "moonbeam", "title": "Moonbeam", "artist": "Julian Lux · Synth-Glam Pop-Rock", "hook_quote": "\"Moonbeam, Moonbeam, black light on the blue...\"", "cover_asset": "assets/vid_moonbeam_v7_poster.jpg", "hook_audio_asset": "assets/track_moonbeam_hook30.mp3", "full_audio_asset": "assets/vid_moonbeam_v7.mp3", "hook_start_sec": 44.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Moonbeam_Full.mp3", "cover_url": "../assets/vid_moonbeam_v7_poster.jpg", "hook_audio_url": "../assets/track_moonbeam_hook30.mp3", "full_audio_url": "../assets/vid_moonbeam_v7.mp3"}, {"id": "barely_made_it_home", "title": "Barely Made It Home (JC Mix)", "artist": "Saint & The Overdrawn · Hip-Hop / Country-Rock", "hook_quote": "\"$500 Wagyu, every bad decision led to one more wrong...\"", "cover_asset": "assets/track_barely_made_it_home_cover.jpg", "hook_audio_asset": "assets/track_barely_made_it_home_hook30.mp3", "full_audio_asset": "assets/hero_barely_made_it_home_full.mp3", "hook_start_sec": 18.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Barely_Made_It_Home.mp3", "cover_url": "../assets/track_barely_made_it_home_cover.jpg", "hook_audio_url": "../assets/track_barely_made_it_home_hook30.mp3", "full_audio_url": "../assets/hero_barely_made_it_home_full.mp3"}, {"id": "house_gets_quiet", "title": "Till You're Back Again (House Gets Quiet)", "artist": "Devon Brooks · Acoustic R&B / Soul", "hook_quote": "\"Three dogs at the window... house gets quiet...\"", "cover_asset": "assets/track_house_gets_quiet_cover.jpg", "hook_audio_asset": "assets/track_house_gets_quiet_hook30.mp3", "full_audio_asset": "assets/track_house_gets_quiet_full.mp3", "hook_start_sec": 48.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "House_Gets_Quiet.mp3", "cover_url": "../assets/track_house_gets_quiet_cover.jpg", "hook_audio_url": "../assets/track_house_gets_quiet_hook30.mp3", "full_audio_url": "../assets/track_house_gets_quiet_full.mp3"}, {"id": "still_finding_trouble", "title": "Still Finding Trouble (Remastered)", "artist": "Cole Landry · Country Rock", "hook_quote": "\"Better bourbon and less regret, we're still finding trouble...\"", "cover_asset": "assets/track_still_finding_trouble_cover.jpg", "hook_audio_asset": "assets/track_still_finding_trouble_hook30.mp3", "full_audio_asset": "assets/track_still_finding_trouble_full.mp3", "hook_start_sec": 42.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Still_Finding_Trouble.mp3", "cover_url": "../assets/track_still_finding_trouble_cover.jpg", "hook_audio_url": "../assets/track_still_finding_trouble_hook30.mp3", "full_audio_url": "../assets/track_still_finding_trouble_full.mp3"}, {"id": "made_of_what_broke_me", "title": "Made of What Broke Me", "artist": "Mason Creed & The Riverline · Heartland Rock", "hook_quote": "\"Every scar, every fall... I'm still standing here...\"", "cover_asset": "assets/vid_made_of_what_broke_me_poster.jpg", "hook_audio_asset": "assets/track_made_of_what_broke_me_hook30.mp3", "full_audio_asset": "assets/vid_made_of_what_broke_me.mp3", "hook_start_sec": 45.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Made_of_What_Broke_Me.mp3", "cover_url": "../assets/vid_made_of_what_broke_me_poster.jpg", "hook_audio_url": "../assets/track_made_of_what_broke_me_hook30.mp3", "full_audio_url": "../assets/vid_made_of_what_broke_me.mp3"}, {"id": "nobody_really_knows", "title": "Nobody Really Knows", "artist": "Vane & Wilder · Indie Pop-Rock", "hook_quote": "\"Everybody likes us... nobody really knows...\"", "cover_asset": "assets/track_nobody_really_knows_cover.jpg", "hook_audio_asset": "assets/track_nobody_really_knows_hook30.mp3", "full_audio_asset": "assets/track_nobody_really_knows_full.mp3", "hook_start_sec": 45.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Nobody_Really_Knows.mp3", "cover_url": "../assets/track_nobody_really_knows_cover.jpg", "hook_audio_url": "../assets/track_nobody_really_knows_hook30.mp3", "full_audio_url": "../assets/track_nobody_really_knows_full.mp3"}, {"id": "rearview_satellites", "title": "Rearview Satellites (Aggressive Edit)", "artist": "Deadreckon · Alt-Rock", "hook_quote": "\"Every road we take leads to what we left behind...\"", "cover_asset": "assets/track_rearview_satellites_cover.jpg", "hook_audio_asset": "assets/track_rearview_satellites_hook30.mp3", "full_audio_asset": "assets/track_rearview_satellites_full.mp3", "hook_start_sec": 40.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "Rearview_Satellites.mp3", "cover_url": "../assets/track_rearview_satellites_cover.jpg", "hook_audio_url": "../assets/track_rearview_satellites_hook30.mp3", "full_audio_url": "../assets/track_rearview_satellites_full.mp3"}, {"id": "15_should_be_8", "title": "15 Should Be 8 — Lane Leads the Tigers", "artist": "Cole Landry · LSU Game-Week Anthem", "hook_quote": "\"15 should be 8, Geaux Tigers...\"", "cover_asset": "assets/vid_death_valley_saturday_poster.jpg", "hook_audio_asset": "assets/track_15_should_be_8_hook30.mp3", "full_audio_asset": "assets/vid_death_valley_saturday.mp3", "hook_start_sec": 35.0, "hook_duration_sec": 30, "youtube_url": "", "youtube_embed_url": "", "youtube_short_url": "", "youtube_lyric_url": "", "dl_name": "15_Should_Be_8.mp3", "cover_url": "../assets/vid_death_valley_saturday_poster.jpg", "hook_audio_url": "../assets/track_15_should_be_8_hook30.mp3", "full_audio_url": "../assets/vid_death_valley_saturday.mp3"}], "mode": "static"};</script>
+  <script src="../app.js"></script>
+</body>
+</html>
