@@ -326,20 +326,23 @@
   const tList = document.getElementById("trackList");
   if (tList) {
     const tracks = DATA.tracks || [];
+    const heroNorm = String(DATA.hero?.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
     const trackSectionHead = document.getElementById("tracksSectionHead");
     if (!tracks.length && trackSectionHead) trackSectionHead.style.display = "none";
     tList.innerHTML = tracks.map((t, i) => {
       const hookSecs = t.hook_duration_sec || 30;
+      const tNorm = String(t.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+      const isFeat = heroNorm && (tNorm.includes(heroNorm) || heroNorm.includes(tNorm));
       const ytBtns = [
         t.youtube_url ? `<a class="btn sm" href="${esc(t.youtube_url)}" target="_blank" rel="noopener">▶ Video ↗</a>` : "",
         t.youtube_short_url ? `<a class="btn sm" href="${esc(t.youtube_short_url)}" target="_blank" rel="noopener">📱 Short ↗</a>` : "",
         t.youtube_lyric_url ? `<a class="btn sm" href="${esc(t.youtube_lyric_url)}" target="_blank" rel="noopener">▶ Lyric Video ↗</a>` : "",
       ].filter(Boolean).join("");
       return `
-        <div class="trow">
+        <div class="trow${isFeat ? " is-featured" : ""}">
           ${t.cover_url ? `<img src="${esc(t.cover_url)}" alt="${esc(t.title)}" loading="lazy">` : `<div></div>`}
           <div>
-            <div class="trow-title">${esc(t.title)}</div>
+            <div class="trow-title">${esc(t.title)}${isFeat ? '<span class="feat-pill">★ Featured Drop</span>' : ''}</div>
             <div class="trow-sub">${esc(t.artist)}</div>
             ${t.hook_quote ? `<div class="trow-hook">${esc(t.hook_quote)}</div>` : ""}
           </div>
